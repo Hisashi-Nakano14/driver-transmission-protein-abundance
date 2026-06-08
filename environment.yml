@@ -1,0 +1,14 @@
+name: cptac-transmission
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - cptac==1.5.14
+      - pandas==2.3.3
+      - numpy==1.26.4
+      - statsmodels==0.14.6
+      - scipy==1.15.3
+      - lifelines==0.30.3
+      - matplotlib>=3.7
