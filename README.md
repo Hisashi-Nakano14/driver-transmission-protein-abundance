@@ -23,13 +23,13 @@ numbers follow the published manuscript.
 | Script | Purpose | Output tables | Manuscript figure/table |
 |--------|---------|---------------|-------------------------|
 | `run_regression_ts.py` | Main TS_R² pipeline (Layer-1/2/3 OLS, partial R², TS_R² = R²_L1 × R²_L2) | `{cancer}_regression_layer{1,2,3}.csv`, `{cancer}_ts_continuous.csv`, `pancancer_ts_continuous.csv` | Figures 2, 3; Table 1; Table S1 |
-| `run_robustness.py` | Gene-class robustness (7-class Kruskal–Wallis + post-hoc), covariate / score-definition sensitivity, permutation null, bootstrap, leave-one-cancer-out | `gene_class_*.csv`, `covariate_sensitivity.csv`, `covariate_rank_correlation.csv`, `permutation_results.csv`, `permutation_null_distribution.csv`, `bootstrap_ci.csv`, `loco_results.csv` | Figures S2 (gene-class), S3 (sensitivity), S6 (permutation null) |
-| `run_mixed_model.py` | Variance decomposition (additive two-way ANOVA) and mixed-effects ICC | `variance_decomposition.csv`, `mixed_model_layer2.csv`, `icc_ranking.csv` | Figure 4; Table S2 |
-| `run_cna_vartype_survival.py` | CNA transmission, variant-type (missense vs truncating) transmission, and survival (Cox) | `cna_transmission.csv`, `vartype_transmission.csv`, `survival_cox.csv` | Figure 5; Figure S4 (missense vs truncating) |
-| `run_msi_pathway.py` | MSI stratification (interaction tests) and pathway cis-vs-trans attenuation | `{cancer}_msi_layer2.csv`, `msi_interaction_tests.csv`, `pathway_transmission.csv` | Figures S1, S5 |
-| `run_r1_2.py` | Measurement-quality sensitivity | `r1_2_quality_table.csv`, `r1_2_named_examples.csv` | Figure S7; Table S3 |
-| `run_r1_3a.py` | Mutation-type stratified Layer-1 sensitivity | `r1_3a_stratified_L1_long.csv`, `r1_3a_pair_summary.csv`, `r1_3a_summary.json` | Table S4 |
-| `run_r1_3b.py` | CNA-adjusted Layer-1 sensitivity | `r1_3b_cna_adjusted_L1.csv`, `r1_3b_summary.json` | Table S5 |
+| `run_robustness.py` | Gene-class robustness (7-class Kruskal–Wallis + post-hoc), covariate / score-definition sensitivity, permutation null, bootstrap, leave-one-cancer-out | `gene_class_*.csv`, `covariate_sensitivity.csv`, `covariate_rank_correlation.csv`, `permutation_results.csv`, `permutation_null_distribution.csv`, `bootstrap_ci.csv`, `loco_results.csv` | Figures S5 (gene-class), S2 (sensitivity), S1 (permutation null) |
+| `run_mixed_model.py` | Variance decomposition (additive two-way ANOVA) and mixed-effects ICC | `variance_decomposition.csv`, `mixed_model_layer2.csv`, `icc_ranking.csv` | Figure 4; Table S3 |
+| `run_cna_vartype_survival.py` | CNA transmission, variant-type (missense vs truncating) transmission, and survival (Cox) | `cna_transmission.csv`, `vartype_transmission.csv`, `survival_cox.csv` | Figure 5; Figure S6 (missense vs truncating) |
+| `run_msi_pathway.py` | MSI stratification (interaction tests) and pathway cis-vs-trans attenuation | `{cancer}_msi_layer2.csv`, `msi_interaction_tests.csv`, `pathway_transmission.csv` | Figures S7 (MSI), S4 (pathway attenuation) |
+| `run_r1_2.py` | Measurement-quality sensitivity | `r1_2_quality_table.csv`, `r1_2_named_examples.csv` | Figure S3; Table S2 |
+| `run_r1_3a.py` | Mutation-type stratified Layer-1 sensitivity | `r1_3a_stratified_L1_long.csv`, `r1_3a_pair_summary.csv`, `r1_3a_summary.json` | Table S5 |
+| `run_r1_3b.py` | CNA-adjusted Layer-1 sensitivity | `r1_3b_cna_adjusted_L1.csv`, `r1_3b_summary.json` | Table S4 |
 | `run_r1_4.py` | MSI/MMR definition sensitivity | `r1_4_results.json` | Results (MSI section) |
 
 > **Note on reproducing aggregate numbers.** Headline aggregate statistics reported in
@@ -78,8 +78,9 @@ repository.**
 
 ## AI assistance
 
-A large language model (Claude, Anthropic) was used to assist with code documentation and formatting. All analytical decisions, code logic, 
-and interpretation were made and verified by the author, who takes full responsibility.
+A large language model (Claude, Anthropic) was used to assist with code documentation
+and formatting. All analytical decisions, code logic, and interpretation were made and
+verified by the author, who takes full responsibility.
 
 ## License
 
