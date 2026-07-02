@@ -4,10 +4,13 @@ Analysis code for the manuscript **"Pan-cancer quantification of driver alterati
 transmission across molecular layers reveals limited propagation to protein
 abundance"** (IJC-26-1558).
 
-The framework quantifies, per driver gene and cancer type, how a somatic alteration
+The framework quantifies, for each driver gene–cancer type pair, how a somatic alteration
 propagates mutation → mRNA (Layer 1) and mRNA → protein (Layer 2) using ordinary
 least-squares partial R², and combines them into a Transmission Score
 **TS_R² = R²_L1 × R²_L2**.
+
+The final analysis included 86 driver gene–cancer type pairs, of which 83 were
+evaluable for the full two-layer TS_R² analysis.
 
 **Author:** Hisashi Nakano, PhD — Department of Health Data Science, Niigata University
 of Health and Welfare, Niigata, Japan · ORCID: 0000-0002-9023-880X
@@ -18,7 +21,7 @@ of Health and Welfare, Niigata, Japan · ORCID: 0000-0002-9023-880X
 
 Each script writes the CSV/JSON tables that the corresponding manuscript figures and
 tables are drawn from; the scripts do not render figures themselves. Figure and table
-numbers follow the published manuscript.
+numbers follow the manuscript.
 
 | Script | Purpose | Output tables | Manuscript figure/table |
 |--------|---------|---------------|-------------------------|
@@ -58,9 +61,9 @@ to the current directory):
 | Variable | Meaning | Default |
 |----------|---------|---------|
 | `CPTAC_DATA_DIR` | Directory of the derived per-cohort CSVs that the producers read/write | `.` |
-| `CPTAC_OUT_DIR` | Output directory for the revision sensitivity scripts | `.` |
+| `CPTAC_OUT_DIR` | Output directory for the sensitivity scripts | `.` |
 
-The revision scripts import the producer modules from their own directory, so keep
+The sensitivity scripts import the producer modules from their own directory, so keep
 all scripts together. Example:
 
 ```bash
@@ -72,9 +75,9 @@ python run_r1_3b.py                     # CNA-adjusted Layer-1 sensitivity
 ## Data availability
 
 Proteogenomic data are from the NCI Clinical Proteomic Tumor Analysis Consortium
-(CPTAC) and are accessed via the `cptac` Python package (which retrieves them from
-the Proteomic Data Commons, PDC). **Raw CPTAC data are not redistributed in this
-repository.**
+(CPTAC). CPTAC data are publicly available through the Proteomic Data Commons
+(PDC) and are accessed in this repository via the `cptac` Python package. 
+**Raw CPTAC data are not redistributed in this repository.**
 
 ## AI assistance
 
